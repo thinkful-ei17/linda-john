@@ -34,3 +34,23 @@ function addItem(){
 }
 
 addItem();
+
+function checkItem(){
+  $('.shopping-list').on(`click`, `.shopping-item-toggle`, function(event) {
+    let item = $(this).closest(`li`).find(`.shopping-item`); //jquery this $()method chaining
+    item.toggleClass(`shopping-item__checked`); //dot only for selection
+  }
+  );
+}
+
+checkItem();
+
+function deleteItem(){
+  $('.shopping-list').on(`click`, `.shopping-item-delete`, function(event) {
+    let deleteThing = $(this).closest(`li`); //jquery this $()method chaining
+    deleteThing.remove();
+  }
+  );
+}
+
+deleteItem();
